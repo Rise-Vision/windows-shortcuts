@@ -2,6 +2,10 @@
 ###Create, edit, and query Windows shortcuts (.lnk files)
 A Node.js API for [shortcut.exe](http://www.optimumx.com/downloads.html) by Optimum X.
 
+## RiseVision note
+
+Modified package.json to be able to reference this module in multiplatform applications. Building on Linux was not possible even if the module is not used.
+
 ##Simple Usage Example
 
 Creating a shortcut to notepad.exe in the current user's Start Menu:
