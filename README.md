@@ -1,5 +1,5 @@
-##windows-shortcuts
-###Create, edit, and query Windows shortcuts (.lnk files)
+## windows-shortcuts
+### Create, edit, and query Windows shortcuts (.lnk files)
 A Node.js API for [shortcut.exe](http://www.optimumx.com/downloads.html) by Optimum X.
 
 ## RiseVision note
@@ -16,9 +16,9 @@ var ws = require('windows-shortcuts');
 ws.create("%APPDATA%/Microsoft/Windows/Start Menu/Programs/Notepad.lnk", "%WINDIR%/notepad.exe");
 ```
 
-##API
-####ws.create(path, [options], [callback])
-####ws.create(path, target, [callback])
+## API
+#### ws.create(path, [options], [callback])
+#### ws.create(path, target, [callback])
 Creates a new shortcut.
 
 - path - The file path to the new shortcut. This can be a folder, in which case a .lnk file will be created in that folder with the name of the target file, or the name of a .lnk file, which will be created. Note that a folder that does not exist will not be created. Environment variables like %WINDIR% can be used, but they will be expanded when the shortcut is created. If you want them to be expanded when the shortcut is clicked, use carets before the percent signs: ^%WINDIR^%.
@@ -52,7 +52,7 @@ ws.create("foo.lnk", {
 });
 ```
 
-####ws.edit(path, options, [callback])
+#### ws.edit(path, options, [callback])
 Edits an existing shortcut, applying new options. Parameters are the same as above.
 
 Example:
@@ -61,7 +61,7 @@ Example:
 ws.edit("foo.lnk", {runStyle : ws.MAX});
 ```
 
-####ws.query(path, callback)
+#### ws.query(path, callback)
 Collects information about an existing shortcut. The callback is called with two parameters:
 
 - error - A string error message if there was an error, otherwise `null`
@@ -88,9 +88,15 @@ null { expanded:
 */
 ```
 
-##Compatibility
+## Testing
+
+```
+npm test
+```
+
+## Compatibility
 Only tested on Windows 7, but shortcut.exe says is compatible with Windows 95 or later, so it should work on modern versions of Windows.
 
 ---
 
-Licensed under [the MIT License](http://opensource.org/licenses/MIT). © 2013 j201
+Licensed under [the MIT License](http://opensource.org/licenses/MIT).
